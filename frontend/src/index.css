@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+.hero{
+    background-image: url("./assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+  This class applies a glass effect with a Tailwind CSS emerald-400 color.
+  - The `background-color` is set to a semi-transparent emerald-400.
+  - `backdrop-filter` is the key property for the blur effect.
+  - A subtle border and box-shadow add to the aesthetic.
+*/
+.glass-emerald-400 {
+  background-color: rgba(19, 228, 99, 0.2); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(52, 211, 153, 0.4); 
+  border-radius: 9999px; /* A very high value to create a pill shape */
+  color: #26442f; /* A light text color for contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease; /* Smooth transition for hover/focus effects */
+}
+
+/* Styles for the placeholder text */
+.glass-emerald-400::placeholder {
+  color: rgba(20, 54, 30, 0.7);
+}
+
+/* Styles for the input when it's in focus */
+.glass-emerald-400:focus {
+  border-color: rgba(52, 211, 153, 0.6); 
+  outline: none; /* Removes the default blue outline in some browsers */
+}
+
+
+
+option:hover{
+    background-color: #116f2d;
+}
