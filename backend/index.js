@@ -44,9 +44,9 @@ app.use(
 app.use(express.json());
 
 app.use("/auth", authRoutes);
-app.use("/api/user", userRoutes);
-app.use("/api/match", require("./routes/match")); 
-app.use('/api/github', githubRouter);
+app.use("/user", userRoutes);
+app.use("/match", require("./routes/match")); 
+app.use('/github', githubRouter);
 
 app.get("/", (req, res) => res.json({ message: "Server is working fine!" }));
 
