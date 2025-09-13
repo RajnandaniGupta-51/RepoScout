@@ -43,7 +43,7 @@ app.use(
 
 app.use(express.json());
 
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/match", require("./routes/match")); 
 app.use('/api/github', githubRouter);
