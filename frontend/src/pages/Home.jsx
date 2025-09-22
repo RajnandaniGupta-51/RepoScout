@@ -1,5 +1,5 @@
 
- import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecentlyViewed } from "../context/RecentlyViewedContext";
 import { useAuth } from "../context/AuthContext";
@@ -10,6 +10,7 @@ import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { VscRepo, VscStarFull, VscRocket } from 'react-icons/vsc';
 import TestimonialCard from "../components/Testimonials";
+import element from '../assets/element.png';
 
 const Home = () => {
   const [trendingRepos, setTrendingRepos] = useState([]);
@@ -78,50 +79,68 @@ const Home = () => {
   };
 
   const testimonialsData = [
-  {
-    id: 1,
-    name: "Alex Chen",
-    title: "Software Engineer at TechSolutions",
-    quote: "RepoScout completely transformed how my team discovers and manages open-source projects. The search filters are incredibly precise!",
-    avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    id: 2,
-    name: "Maria Rodriguez",
-    title: "Lead Developer at Innovate Corp",
-    quote: "Finding the right dependency used to take hours. With RepoScout, I can pinpoint the perfect repository in minutes. It's an indispensable tool.",
-    avatarUrl: "https://randomuser.me/api/portraits/women/35.jpg"
-  },
-  {
-    id: 3,
-    name: "Ben Carter",
-    title: "DevOps Specialist at CloudForge",
-    quote: "The collaboration features on RepoScout are a game-changer. We now have a centralized place to share and track repos across our entire organization.",
-    avatarUrl: "https://randomuser.me/api/portraits/men/38.jpg"
-  },
-];
+    {
+      id: 1,
+      name: "Alex Chen",
+      title: "Software Engineer at TechSolutions",
+      quote: "RepoScout completely transformed how my team discovers and manages open-source projects. The search filters are incredibly precise!",
+      avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      id: 2,
+      name: "Maria Rodriguez",
+      title: "Lead Developer at Innovate Corp",
+      quote: "Finding the right dependency used to take hours. With RepoScout, I can pinpoint the perfect repository in minutes. It's an indispensable tool.",
+      avatarUrl: "https://randomuser.me/api/portraits/women/35.jpg"
+    },
+    {
+      id: 3,
+      name: "Ben Carter",
+      title: "DevOps Specialist at CloudForge",
+      quote: "The collaboration features on RepoScout are a game-changer. We now have a centralized place to share and track repos across our entire organization.",
+      avatarUrl: "https://randomuser.me/api/portraits/men/38.jpg"
+    },
+  ];
 
   return (
-    <div className="pb-10">
+    <div className="pb-10 ">
       {/* HERO SECTION */}
-      <section className="hero h-[90vh] text-white py-20 px-6 md:px-12 text-center">
-        <div className="w-full md:w-[50vw] flex flex-col md:ml-[0.5vw] items-center md:items-start justify-center h-full">
-          <h1 className="text-4xl text-center md:text-start md:text-8xl font-bold mb-4">
+      <section className="hero relative overflow-hidden  h-[90vh] text-white py-13 px-6 md:px-12 text-center">
+        <div className="w-full md:w-[50vw] flex flex-col md:ml-[0.5vw] items-center md:items-start md:justify-center h-full">
+          <h1 className="text-5xl text-center md:text-start md:text-8xl font-bold mb-4">
             Discover<br /> Open-Source Projects
           </h1>
-          <p className="text-lg text-center md:text-start md:text-xl max-w-2xl mb-6">
+          <p className="text-md text-center md:text-start md:text-xl max-w-2xl mb-6">
             Explore repositories based on your interests. Find trending projects,
             popular topics, and much more.
           </p>
-          <button 
-            className="px-7 py-2 text-sm font-semibold bg-emerald-700 rounded-full flex gap-2 items-center justify-center transition-all duration-300 hover:bg-emerald-800 group" 
+          <button
+            className="px-7 py-2 text-sm font-semibold bg-emerald-700 rounded-full flex gap-2 items-center justify-center transition-all duration-300 hover:bg-emerald-800 group"
             onClick={() => navigate('/search')}
-          > 
-            Start Exploring 
-            <FaArrowRightLong className="text-2xl mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"/>
+          >
+            Start Exploring
+            <FaArrowRightLong className="text-2xl mt-1 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
+
+          <img
+        src={element}
+        alt="Circuit Element"
+        className="absolute -translate-x-[33%] opacity-12 translate-y-[40%] bottom-[0] right-[0] w-[50vh] h-auto pointer-events-none select-none md:hidden"
+      />
+
+            <img
+        src={element}
+        alt="Circuit Element"
+        className="absolute translate-x-[20%] translate-y-[31%] bottom-[0] right-[0] w-[50vh] h-auto pointer-events-none select-none md:hidden"
+      />
+
       </section>
+
+
+    
+
+
 
       {/* TOPICS SECTION */}
       <section className="py-20 px-6 md:px-12 w-full mx-auto">
@@ -136,7 +155,7 @@ const Home = () => {
                 onClick={() => navigate(`/search?q=${topic}`)}
                 className="group relative px-6 py-3 bg-white text-gray-700 font-medium rounded-full shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl overflow-hidden"
               >
-          
+
                 <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                   {topic}
@@ -223,9 +242,8 @@ const Home = () => {
 
       {/* Custom Modal */}
       <div
-        className={`fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center ${
-          modalOpen ? 'block' : 'hidden'
-        }`}
+        className={`fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center ${modalOpen ? 'block' : 'hidden'
+          }`}
       >
         <div className="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
           <h3 className="text-lg font-bold mb-4">Error</h3>
