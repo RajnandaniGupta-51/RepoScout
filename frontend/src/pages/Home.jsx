@@ -50,7 +50,7 @@ const Home = () => {
     "Machine Learning",
     "Blockchain",
     "Mobile Apps",
-    "Game Development",
+    "App Development",
     "Data Science",
   ];
 
@@ -175,7 +175,7 @@ const Home = () => {
         <button
           key={index}
           onClick={() => navigate(`/search?q=${topic}`)}
-          className="group relative w-full max-w-[200px] px-4 py-4 bg-white text-gray-700 font-medium rounded-full shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-3xl overflow-hidden text-sm"
+          className="group relative w-full max-w-[200px] px-4 py-4 bg-white text-gray-700 font-medium rounded-full cursor-pointer shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-3xl overflow-hidden text-sm"
         >
 
           <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -189,7 +189,7 @@ const Home = () => {
 </section>
 
       {/* TRENDING REPOS */}
-      <section className="md:py-16 py-14 px-6 md:px-12 max-w-7xl mx-auto rounded-xl ">
+      <section className="md:py-16 py-14 px-5 md:px-12 max-w-7xl mx-auto rounded-xl ">
         <h2 className="text-4xl font-extrabold mb-10 text-[#01050A] text-center tracking-tight">
           Featured Projects
         </h2>
@@ -239,7 +239,7 @@ const Home = () => {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <div className="md:py-16 py-14 px-2 md:px-0 font-sans">
+      <div className="md:py-16 py-14  md:px-0 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-extrabold text-[#01050A] text-center mb-15">
             Testimonials
