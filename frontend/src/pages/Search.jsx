@@ -105,7 +105,7 @@ const Search = () => {
         <p className="text-center text-gray-500 mt-12 text-lg">Loading...</p>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8 px-4 sm:px-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8 md:px-4 px-0">
         {repos.length > 0 ? (
           repos.map((repo) => <RepoCard key={repo.id} repo={repo} />)
         ) : (
