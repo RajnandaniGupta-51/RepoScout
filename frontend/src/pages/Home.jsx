@@ -12,6 +12,7 @@ import { VscRepo, VscStarFull, VscRocket } from 'react-icons/vsc';
 import TestimonialCard from "../components/Testimonials";
 import element from '../assets/element.png';
 
+
 const Home = () => {
   const [trendingRepos, setTrendingRepos] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -78,7 +79,7 @@ const Home = () => {
     }
   };
 
-  const testimonialsData = [
+ const testimonialsData = [
     {
       id: 1,
       name: "Alex Chen",
@@ -138,12 +139,8 @@ const Home = () => {
       </section>
 
 
-    
-
-
-
       {/* TOPICS SECTION */}
-      <section className="py-20 px-6 md:px-12 w-full mx-auto">
+      <section className="md:py-20 py-17 px-6 md:px-12 w-full mx-auto">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold mb-8 text-[#01050A] tracking-tight">
             Explore by Topics
@@ -167,7 +164,7 @@ const Home = () => {
       </section>
 
       {/* TRENDING REPOS */}
-      <section className="py-16 px-6 md:px-12 max-w-7xl mx-auto rounded-xl">
+      <section className="md:py-16 py-14 px-6 md:px-12 max-w-7xl mx-auto rounded-xl">
         <h2 className="text-4xl font-extrabold mb-10 text-[#01050A] text-center tracking-tight">
           Featured Projects
         </h2>
@@ -217,7 +214,7 @@ const Home = () => {
       </section>
 
       {/* TESTIMONIALS SECTION */}
-      <div className="py-16 font-sans">
+      <div className="md:py-16 py-14 px-2 md:px-0 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-extrabold text-[#01050A] text-center mb-15">
             Testimonials
