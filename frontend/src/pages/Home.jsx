@@ -140,12 +140,12 @@ const Home = () => {
 
 
       {/* TOPICS SECTION */}
-      <section className="md:py-20 py-17 px-6 md:px-12 w-full mx-auto">
+      {/* <section className="md:py-20 py-17 px-6 md:px-12 w-full mx-auto">
         <div className="text-center">
           <h2 className="text-4xl font-extrabold mb-8 text-[#01050A] tracking-tight">
             Explore by Topics
           </h2>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap  justify-center gap-4">
             {topics.map((topic, index) => (
               <button
                 key={index}
@@ -161,10 +161,35 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+{/* TOPICS SECTION*/}
+<section className="md:py-20 py-17 px-6 md:px-12 w-full max-w-7xl mx-auto">
+  <div className="text-center">
+    <h2 className="text-4xl font-extrabold mb-12 text-[#01050A] tracking-tight">
+      Explore by Topics
+    </h2>
+    
+    <div className="grid grid-cols-2 sm:grid-cols-6 gap-y-6 gap-x-4 max-w-auto mx-auto place-items-center">
+      {topics.map((topic, index) => (
+        <button
+          key={index}
+          onClick={() => navigate(`/search?q=${topic}`)}
+          className="group relative w-full max-w-[200px] px-4 py-4 bg-white text-gray-700 font-medium rounded-full shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-3xl overflow-hidden text-sm"
+        >
+
+          <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+            {topic}
+          </span>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* TRENDING REPOS */}
-      <section className="md:py-16 py-14 px-6 md:px-12 max-w-7xl mx-auto rounded-xl">
+      <section className="md:py-16 py-14 px-6 md:px-12 max-w-7xl mx-auto rounded-xl ">
         <h2 className="text-4xl font-extrabold mb-10 text-[#01050A] text-center tracking-tight">
           Featured Projects
         </h2>
